@@ -18,28 +18,28 @@ python3 imdb.py -d <directory-with-imdb-files> -a
 ```
 
 The converter currently supports following files:
--actors.list
--costume-designers.list
--actresses.list
--certificates.list
--cinematographers.list
--composers.list
--countries.list
--directors.list
--distributors.list
--editors.list
--languages.list
--locations.list
--movies.list
--producers.list
--production-companies.list
--production-designers.list
--ratings.list
--release-dates.list
--sound-mix.list
--special-effects-companies.list
--technical.list
--writers.list
+  - actors.list
+  - costume-designers.list
+  - actresses.list
+  - certificates.list
+  - cinematographers.list
+  - composers.list
+  - countries.list
+  - directors.list
+  - distributors.list
+  - editors.list
+  - languages.list
+  - locations.list
+  - movies.list
+  - producers.list
+  - production-companies.list
+  - production-designers.list
+  - ratings.list
+  - release-dates.list
+  - sound-mix.list
+  - special-effects-companies.list
+  - technical.list
+  - writers.list
 
 ### Step 4
 
