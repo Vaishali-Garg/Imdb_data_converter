@@ -951,6 +951,44 @@ def convert_writers():
                         f_out.writerow( row)
 
 
+def convert_genres():
+    with open('genres.list', 'r', encoding= 'ISO-8859-1') as f_in:
+        with open('genres.csv', 'w') as f_outfile:
+            f_out = csv.writer(f_outfile)
+            f_out.writerow(['Title','Year','Genre','TV Series','Season No','Episode No'])
+            foundposition = False
+            for line in f_in:
+                line = line.rstrip()
+                if foundposition == False:
+                    if line.lower() == '8: the genres list':
+                        for i in range(2):
+                            next(f_in)
+
+                        foundposition = True
+
+                elif line:
+                    row = []
+                    #title, year, country
+                    m = re.search("(.*)\s\((\d+).*?\).*\t+(.+)$", line)
+
+                    if m is None:
+                        if line == re.search("^-+$", line):
+                            break
+                    else:
+                        if m.group(1):
+                            row.extend([m.group(1), m.group(2), m.group(3)])
+
+                        #TV series name, season no and episode no
+                        m1 = re.search("\{(.*?)\s?\(\#(\d+)\.(\d+)\)\}", line)
+                        if m1:
+                            row.extend([m1.group(1), m1.group(2), m1.group(3)])
+                        else:
+                            row.extend(["", "", ""])
+
+                        f_out.writerow( row)
+
+
+
 imdb_dict = {
     'actors.list': convert_actors,
     'costume-designers.list': convert_costume_designers,
@@ -973,7 +1011,8 @@ imdb_dict = {
     'sound-mix.list' : convert_sound_mix,
     'special-effects-companies.list' : convert_special_effects_companies,
     'technical.list' : convert_technical,
-    'writers.list' : convert_writers
+    'writers.list' : convert_writers,
+    'genres.list' : convert_genres
 }
 
 def usage():

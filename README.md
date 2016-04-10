@@ -40,6 +40,7 @@ The converter currently supports following files:
   - special-effects-companies.list
   - technical.list
   - writers.list
+  - Genres.list
 
 ### Step 4
 
@@ -78,4 +79,5 @@ sound-mix:   597308 sound-mix.list -   585684 sound-mix.csv
 special-effects-companies:    71248 special-effects-companies.list -    42744 special-effects-companies.csv
 technical:  1717554 technical.list -  1675199 technical.csv
 writers:  4462728 writers.list -  3804718 writers.csv
+genres: 2183747 genres.list - 2135510 genres.csv
 ```
